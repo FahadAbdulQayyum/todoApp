@@ -1,18 +1,14 @@
 import './App.css';
-import AppRoutes from './routes/appRoutes';
-// import { BrowserRouter } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
+import TodoApp from './components/todoApp/TodoApp';
 
 function App() {
   return (
-    <HashRouter>
-      <AppRoutes/>
-    </HashRouter>
-
-    // <BrowserRouter>
-    //   <AppRoutes/>
-    // </BrowserRouter>
-  );
+    <div 
+      // className='bg-zinc-100 w-[50%] p-5 m-auto rounded'>
+      className='h-screen flex items-center justify-center'>
+      <TodoApp/>
+    </div>
+  )
 }
 
 export default App;
