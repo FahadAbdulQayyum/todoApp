@@ -1,7 +1,5 @@
 {
-  "homepage": "https://fahadabdulqayyum.github.io/routingPractice/",
   "name": "routingpractice",
-  "name1": "contextapi",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
