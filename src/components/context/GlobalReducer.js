@@ -1,17 +1,15 @@
 const GlobalReducer = (state, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'ADD_TODO': {
             return {
                 ...state,
-                // todo: [...state.todo, action.payload]
                 todo: [...state.todo, action.payload]
-                // todo: todo?.map(p=>[...p, action.payload])
             }
         }
         case 'DELETE_TODO': {
             return {
                 ...state,
-                todo: state.todo.filter((v,i)=>v.data!==action.payload)
+                todo: state.todo.filter((v, i) => v.data !== action.payload)
             }
         }
         case 'MARK_TODO': {
