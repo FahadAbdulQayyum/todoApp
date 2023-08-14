@@ -11,7 +11,7 @@ const GlobalReducer = (state, action) => {
         case 'DELETE_TODO': {
             return {
                 ...state,
-                todo: state.todo.filter((v,i)=>v!==action.payload)
+                todo: state.todo.filter((v,i)=>v.data!==action.payload)
             }
         }
         case 'MARK_TODO': {
@@ -21,13 +21,6 @@ const GlobalReducer = (state, action) => {
             return {
                 ...state,
                 todo: newArr,
-                // todo: [...state.todo, state.todo.mark = !action.payload.mark]
-                // todo: action.payload
-                // todo: state.todo.map((t,i) => t === action.payload.data ? state.todo.mark=action.payload.mark : t)
-                // todo: state.todo.map(t => t === action.payload.data ? action.payload : t)
-                // todo: state.todo.map(t => t === action.payload.data && action.payload)
-                // todo: state.todo.map((t,i) => console.log('t === action.payload.data',action.payload) )
-                // todo[action.payload.index]: [...state.todo, action.payload.data]
             }
         }
         default: {
