@@ -1,5 +1,6 @@
 import {useState, useContext} from 'react';
 import GlobalContext from '../context/GlobalContext';
+import TodoData from '../todoData/TodoData';
 
 const TodoApp = () => {
 
@@ -24,7 +25,8 @@ const TodoApp = () => {
                 <input
                     type="text"
                     className='p-2 w-full outline-0 border-2 rounded'
-                    placeholder='Enter your todo' 
+                    placeholder='Enter your todo'
+                    autoFocus 
                     onChange={e=>setData(e?.target?.value)}
                     />
                 <button
@@ -35,12 +37,7 @@ const TodoApp = () => {
             <button onClick={showTodo} className='text-4xl bg-teal-500 text-white rounded-full px-[10px] pb-1 shadow drop-shadow-xl active:scale-100 active:pb-2 active:px-3 ease-in-out duration-300 absolute bottom-5 right-5'>
                 +
             </button>
-            {/* {console.log('todo',todo)} */}
-            {todo.map((v,i)=>{
-                return (
-                    <div key={i}>{i+1}{'. '}{v}</div>
-                )
-            })}
+            {!show && <TodoData/>}
         </div>
     )
 }

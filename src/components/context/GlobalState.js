@@ -14,10 +14,15 @@ const GlobalState = props => {
         console.log('addTodo function')
     }
 
+    const deleteTodo = data => {
+        dispatch({type: 'DELETE_TODO', payload: data})
+    }
+
     return <GlobalContext.Provider
     value={{
         todo: state.todo,
-        addTodo
+        addTodo,
+        deleteTodo
     }}
     >
         {props.children}

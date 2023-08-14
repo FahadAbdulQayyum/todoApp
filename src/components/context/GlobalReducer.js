@@ -6,6 +6,12 @@ const GlobalReducer = (state, action) => {
                 todo: [...state.todo, action.payload]
             }
         }
+        case 'DELETE_TODO': {
+            return {
+                ...state,
+                todo: state.todo.filter((v,i)=>v!==action.payload)
+            }
+        }
         default: {
             return {
                 ...state
