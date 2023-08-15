@@ -1,6 +1,7 @@
 import GlobalReducer from './GlobalReducer';
 import GlobalContext from './GlobalContext';
 import { useReducer } from 'react';
+import { ADD_TODO, DELETE_TODO, MARK_TODO } from '../types';
 
 const GlobalState = props => {
     const initialState = {
@@ -11,17 +12,17 @@ const GlobalState = props => {
 
     const addTodo = data => {
         let todoObj = { data, mark: false };
-        dispatch({ type: 'ADD_TODO', payload: todoObj });
+        dispatch({ type: ADD_TODO, payload: todoObj });
         console.log('addTodo function');
     }
 
     const deleteTodo = data => {
-        dispatch({ type: 'DELETE_TODO', payload: data });
+        dispatch({ type: DELETE_TODO, payload: data });
     }
 
     const onCheckBox = (e, index, data) => {
         let todoObj = { index, mark: e?.target?.checked, data }
-        dispatch({ type: 'MARK_TODO', payload: todoObj })
+        dispatch({ type: MARK_TODO, payload: todoObj })
     }
 
     return <GlobalContext.Provider

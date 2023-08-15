@@ -28,4 +28,4 @@ const TodoData = () => {
     )
 }
 
-export default TodoData
+export default TodoData;
